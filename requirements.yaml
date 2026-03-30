@@ -1,0 +1,24 @@
+packages:
+  "framer-motion": "For gamified page transitions, spring animations, and rewarding micro-interactions"
+  "canvas-confetti": "For visual celebration when completing lessons, quizzes, or daily goals"
+  "@types/canvas-confetti": "Types for canvas-confetti"
+  "date-fns": "For formatting dates, streak calculations, and review schedules"
+  "clsx": "Utility for conditionally joining class names"
+  "tailwind-merge": "Utility for intelligently merging Tailwind classes"
+  "lucide-react": "Beautiful, consistent iconography for the UI"
+
+images:
+  - path: "artifacts/jlpt-app/public/images/hero-bg.png"
+    description: "Vibrant, clean flat-vector illustration of Mt Fuji with cherry blossoms, warm sunny colors, gamified UI background style"
+    aspect_ratio: "16:9"
+  - path: "artifacts/jlpt-app/public/images/sensei-avatar.png"
+    description: "A cute, expressive anime-style Shiba Inu owl mascot wearing glasses and a Japanese sensei headband, clean vector art on transparent background"
+    aspect_ratio: "1:1"
+  - path: "artifacts/jlpt-app/public/images/dojo-bg.png"
+    description: "Stylized, vibrant 2D vector Japanese dojo interior, soft lighting, suitable for a gamified background"
+    aspect_ratio: "16:9"
+
+notes:
+  - "Assuming Orval generated React Query hooks are available at @workspace/api-client-react"
+  - "The AI chat endpoint /api/ai/chat uses SSE (Server-Sent Events) and requires a custom fetch hook to stream responses"
+  - "No auth implementation required; using default 'default' userId as per instructions"
