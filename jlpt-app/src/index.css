@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Nunito:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: 'Nunito', sans-serif;
+  --font-display: 'M PLUS Rounded 1c', sans-serif;
+  --font-jp: 'Noto Sans JP', sans-serif;
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-primary-dark: hsl(var(--primary-dark));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-secondary-dark: hsl(var(--secondary-dark));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-accent-dark: hsl(var(--accent-dark));
+  --color-success: hsl(var(--success));
+  --color-success-dark: hsl(var(--success-dark));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+}
+
+:root {
+  /* Vibrant Cream Background */
+  --background: 48 100% 98%;
+  --foreground: 222 47% 15%;
+  
+  /* Pure White Cards */
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 15%;
+  
+  /* Japanese Crimson Red */
+  --primary: 348 83% 53%;
+  --primary-dark: 348 83% 40%;
+  --primary-foreground: 0 0% 100%;
+  
+  /* Deep Navy Blue */
+  --secondary: 222 47% 25%;
+  --secondary-dark: 222 47% 15%;
+  --secondary-foreground: 0 0% 100%;
+  
+  /* Gold/Yellow Accent */
+  --accent: 43 96% 58%;
+  --accent-dark: 43 96% 45%;
+  --accent-foreground: 222 47% 15%;
+  
+  /* Success Green */
+  --success: 152 69% 45%;
+  --success-dark: 152 69% 35%;
+  
+  /* Grays & Utilities */
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 47%;
+  --border: 214 32% 91%;
+  --input: 214 32% 91%;
+  --ring: 348 83% 53%;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased font-sans overflow-x-hidden;
+    background-image: radial-gradient(hsl(var(--border)) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-jp {
+    font-family: var(--font-jp);
+  }
+  
+  /* Gamified Chunky Shadows */
+  .shadow-chunky-primary {
+    box-shadow: 0 4px 0 0 hsl(var(--primary-dark));
+  }
+  
+  .shadow-chunky-secondary {
+    box-shadow: 0 4px 0 0 hsl(var(--secondary-dark));
+  }
+  
+  .shadow-chunky-accent {
+    box-shadow: 0 4px 0 0 hsl(var(--accent-dark));
+  }
+  
+  .shadow-chunky-success {
+    box-shadow: 0 4px 0 0 hsl(var(--success-dark));
+  }
+  
+  .shadow-chunky-muted {
+    box-shadow: 0 4px 0 0 hsl(var(--border));
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--border));
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground));
+  }
+  
+  /* Furigana Styling */
+  ruby {
+    @apply inline-flex flex-col items-center justify-end leading-none align-bottom;
+  }
+  rt {
+    @apply text-[0.5em] text-muted-foreground font-jp mb-1;
+    line-height: 1;
+  }
+}
